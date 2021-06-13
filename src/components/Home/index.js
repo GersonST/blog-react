@@ -14,7 +14,7 @@ class Home extends Component{
       state.posts = [];
       snapshot.forEach((childItem)=>{
         state.posts.push({
-          keu:childItem.key,
+          key:childItem.key,
           titulo: childItem.val().titulo,
           image: childItem.val().image,
           descricao: childItem.val().descricao,
@@ -22,6 +22,7 @@ class Home extends Component{
 
         })
       });
+      state.posts.reverse();
       this.setState(state);
     })
   }
